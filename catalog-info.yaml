@@ -1,0 +1,21 @@
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: yo3fpv8by-python-gitops
+  description: This is GitOps manifest for yo3fpv8by-python   
+  links:
+    - url: https://www.redhat.com/en/solutions/trusted-software-supply-chain
+      title: Trusted Secure Supply Chain 
+      icon: dashboard
+      type: admin-dashboard
+  annotations:    
+    argocd/app-selector: rhtap/gitops=yo3fpv8by-python
+    backstage.io/kubernetes-id: yo3fpv8by-python 
+    backstage.io/techdocs-ref: dir:. 
+    janus-idp.io/tekton: yo3fpv8by-python   
+spec:
+  type: gitops
+  owner: user:guest 
+  lifecycle: experimental
+  dependsOn:
+    - component:yo3fpv8by-python
